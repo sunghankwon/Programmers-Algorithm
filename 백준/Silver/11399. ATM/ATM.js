@@ -6,10 +6,8 @@ const filePath = process.platform === "linux" ? "/dev/stdin" : INPUT_PATH;
 const input = fs.readFileSync(filePath).toString().trim().split("\n");
 
 function solution(inputArguments) {
-  const n = inputArguments[0];
-  const times = inputArguments[1].split(" ").map(Number);
+  const sortedTime = inputArguments[1].split(" ").map(Number).sort((a, b) => a - b);
 
-  const sortedTime = times.sort((a, b) => a - b);
   let allTime = 0;
   let waitingTime = 0;
 
